@@ -72,11 +72,32 @@ document.querySelectorAll('input').forEach(input => {
     input.addEventListener('input', inputChanged);
 });
 
+let xPosition = document.querySelector('#result-x-position');
+let yPosition = document.querySelector('#result-y-position');
+let blur = document.querySelector('#result-blur');
+let spread = document.querySelector('#result-spread');
+let shadowColour = document.querySelector('#result-shadow-colour');
+
 function inputChanged(e) {
     document.documentElement.style.setProperty(
         `--${e.target.name}`,
         e.target.value
     )
+    if(e.target.name == 'x-position') {
+        xPosition.textContent = e.target.value;
+    }
+    if(e.target.name == 'y-position') {
+        yPosition.textContent = e.target.value;
+    }
+    if(e.target.name == 'blur') {
+        blur.textContent = e.target.value;
+    }
+    if(e.target.name == 'spread') {
+        spread.textContent = e.target.value;
+    }
+    if(e.target.name == 'shadow-colour') {
+        shadowColour.textContent = e.target.value;
+    }
 }
 
 // keep it tidy by invoking smaller functions inside of app function
