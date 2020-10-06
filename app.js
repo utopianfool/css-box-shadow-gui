@@ -72,17 +72,29 @@ document.querySelectorAll('input').forEach(input => {
     input.addEventListener('input', inputChanged);
 });
 
-let xPosition = document.querySelector('#result-x-position');
-let yPosition = document.querySelector('#result-y-position');
-let blur = document.querySelector('#result-blur');
-let spread = document.querySelector('#result-spread');
-let shadowColour = document.querySelector('#result-shadow-colour');
+const xPosition = document.querySelector('#result-x-position');
+const yPosition = document.querySelector('#result-y-position');
+const blur = document.querySelector('#result-blur');
+const spread = document.querySelector('#result-spread');
+const shadowColour = document.querySelector('#result-shadow-colour');
+const insetCheckbox = document.querySelector('#inset');
 
 function inputChanged(e) {
     document.documentElement.style.setProperty(
         `--${e.target.name}`,
         e.target.value
     )
+    if(insetCheckbox.checked == true) {
+        document.documentElement.style.setProperty(
+            `--inset`,
+            'inset'
+        )
+    } else {
+        document.documentElement.style.setProperty(
+            `--inset`,
+            
+        )
+    }
     if(e.target.name == 'x-position') {
         xPosition.textContent = e.target.value;
     }
