@@ -329,7 +329,8 @@ nav {
         calc(var(--y-position, 3) * 1px)
         calc(var(--blur, 5) * 1px)
         calc(var(--spread, 6) * 1px)
-        var(--shadow-colour, #000000);
+        var(--shadow-colour, #000000)
+        var(--inset, );
 }
 
 input:not([type="color"]) {
