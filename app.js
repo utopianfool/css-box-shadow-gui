@@ -78,23 +78,14 @@ const blur = document.querySelector('#result-blur');
 const spread = document.querySelector('#result-spread');
 const shadowColour = document.querySelector('#result-shadow-colour');
 const insetCheckbox = document.querySelector('#inset');
+const insetShadow = document.querySelector('#result-inset');
+
 
 function inputChanged(e) {
     document.documentElement.style.setProperty(
         `--${e.target.name}`,
         e.target.value
     )
-    if(insetCheckbox.checked == true) {
-        document.documentElement.style.setProperty(
-            `--inset`,
-            'inset'
-        )
-    } else {
-        document.documentElement.style.setProperty(
-            `--inset`,
-            
-        )
-    }
     if(e.target.name == 'x-position') {
         xPosition.textContent = e.target.value;
     }
@@ -110,9 +101,22 @@ function inputChanged(e) {
     if(e.target.name == 'shadow-colour') {
         shadowColour.textContent = e.target.value;
     }
+    if(insetCheckbox.checked == true) {
+        document.documentElement.style.setProperty(
+            `--inset`,
+            'inset'
+        )
+        insetShadow.textContent = ' inset';
+    }
+    if(insetCheckbox.checked == false) {
+        document.documentElement.style.setProperty(
+            `--inset`,
+            
+        )
+        insetShadow.textContent = '';
+    }
 }
 
-// keep it tidy by invoking smaller functions inside of app function
 const app = () => {
     navSlide();
     projectsList();
