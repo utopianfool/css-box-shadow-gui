@@ -320,8 +320,9 @@ nav {
     border-bottom: 1px solid #999;
 }
 #box {
-    width: 100px;
-    height: 100px;
+    width: calc(var(--width, 100) * 1px);
+    height: calc(var(--height, 100) * 1px);
+    border-radius: calc(var(--border-radius, 0) * 1px);
     margin: 25px;
     background-color: var(--box-colour, #ffd700);
     box-shadow:
