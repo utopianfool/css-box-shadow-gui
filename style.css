@@ -365,8 +365,64 @@ input[type="color"] {
     margin-left: 10px;
     margin-bottom: 10px;
     background-color: #f2f2f2;
-    display: flex;
-    align-items: center;
     border: 0.5px solid #000000;
     box-shadow: 0px 0px 15px 1px #999999 inset;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.box-shape {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    height: auto;
+    min-height: 100px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 1rem 1rem 1rem;
+    background-color: black;
+    color: white;
+    border-radius: 0 0 5px 0;
+    transform: translateX(-320px);
+    transition: all 0.5s ease-in-out;
+}
+.box-shape label {
+    margin-top: 0.75rem;
+    margin-bottom: 0.15rem;
+    font-weight: bold;
+}
+.box-shape.enabled {
+    transform: translateX(0);
+}
+#box-tab {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    right: -40px;
+    top:0;
+    padding: 1rem 0;
+    height: auto;
+    width: 40px;
+    background: #000000;
+    color: #ffffff;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 0 5px 5px 0;
+}
+#box-tab:hover {
+    background: #999999;
+    color: #000000;
+}
+#box-tab:focus, #box-tab:active {
+    border: none;
+    outline: none;
+}
+.box-shape-output {
+    display: none;
+}
+.box-shape-output.visible {
+    display: block;
 }
