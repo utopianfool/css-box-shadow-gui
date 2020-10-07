@@ -75,7 +75,24 @@
                 <label for="background-colour">Background</label>
                 <input type="color" name="background-colour" id="background-colour" value="#ffffff">
             </div>
+            <div class="box-shape">
+                <button id="box-tab">Edit Box</button>
+                <h2>Box Shape</h2>
+                <label for="height">Height</label>
+                <input type="number" name="height" id="height" value="100">
+
+                <label for="width">Width</label>
+                <input type="number" name="width" id="width" value="100">
+
+                <label for="border-radius">Border Radius</label>
+                <input type="number" name="border-radius" id="border-radius" value="0">
+            </div>
             <div class="css-output">
+                <div class="box-shape-output">
+                    <p>height : <span id="result-height">100</span>px</p>
+                    <p>width : <span id="result-width">100</span>px</p>
+                    <p>border-radius : <span id="result-border-radius">0</span>px</p>
+                </div>
                 <p>box-shadow : <span id="result-x-position">3</span>px <span id="result-y-position">3</span>px <span id="result-blur">5</span>px <span id="result-spread">6</span>px <span id="result-shadow-colour">#000000</span><span id="result-inset"></span>;</p>
             </div>
         </div>
