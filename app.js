@@ -68,6 +68,15 @@ const projectsList = () => {
 }
 
 /* CSS box shadow visual representation app */
+const boxTab = document.querySelector('#box-tab');
+const boxShape = document.querySelector('.box-shape');
+const boxShapeResults = document.querySelector('.box-shape-output');
+
+boxTab.addEventListener('click', function() {
+    boxShape.classList.toggle('enabled');
+    boxShapeResults.classList.toggle('visible');
+});
+
 document.querySelectorAll('input').forEach(input => {
     input.addEventListener('input', inputChanged);
 });
@@ -79,6 +88,9 @@ const spread = document.querySelector('#result-spread');
 const shadowColour = document.querySelector('#result-shadow-colour');
 const insetCheckbox = document.querySelector('#inset');
 const insetShadow = document.querySelector('#result-inset');
+const boxHeight = document.querySelector('#result-height');
+const boxWidth = document.querySelector('#result-width');
+const borderRadius = document.querySelector('#result-border-radius');
 
 
 function inputChanged(e) {
@@ -86,6 +98,7 @@ function inputChanged(e) {
         `--${e.target.name}`,
         e.target.value
     )
+    // Update box shadow results
     if(e.target.name == 'x-position') {
         xPosition.textContent = e.target.value;
     }
@@ -101,6 +114,17 @@ function inputChanged(e) {
     if(e.target.name == 'shadow-colour') {
         shadowColour.textContent = e.target.value;
     }
+    // Update box shape
+    if(e.target.name == 'height') {
+        boxHeight.textContent = e.target.value;
+    }
+    if(e.target.name == 'width') {
+        boxWidth.textContent = e.target.value;
+    }
+    if(e.target.name == 'border-radius') {
+        borderRadius.textContent = e.target.value;
+    }
+    // Update inset checkbox
     if(insetCheckbox.checked == true) {
         document.documentElement.style.setProperty(
             `--inset`,
