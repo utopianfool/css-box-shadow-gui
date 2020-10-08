@@ -130,14 +130,12 @@ function inputChanged(e) {
             `--inset`,
             'inset'
         )
-        insetShadow.textContent = ' inset';
     }
     if(insetCheckbox.checked == false) {
         document.documentElement.style.setProperty(
             `--inset`,
             
         )
-        insetShadow.textContent = '';
     }
 }
 
