@@ -434,12 +434,22 @@ input[type="color"] {
 .box-shape-output.visible {
     display: block;
 }
+#result-inset {
+    display: none;
+}
+#result-inset.visible {
+    display: inline-block;
+}
 @media (max-width: 520px) {
     .title-area {
         font-size: 10px;
         max-width: 180px;
     }
     .css-output {
-        min-width: 220px;
+        min-width: 190px;
+        bottom: 50px;
+    }
+    .sidebar label {
+        font-size: 12px;
     }
 }
