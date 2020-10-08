@@ -91,7 +91,11 @@ const insetShadow = document.querySelector('#result-inset');
 const boxHeight = document.querySelector('#result-height');
 const boxWidth = document.querySelector('#result-width');
 const borderRadius = document.querySelector('#result-border-radius');
+const checkbox = document.querySelector('input[name="inset"]');
 
+checkbox.addEventListener('change', function() {
+    insetShadow.classList.toggle('visible');
+});
 
 function inputChanged(e) {
     document.documentElement.style.setProperty(
